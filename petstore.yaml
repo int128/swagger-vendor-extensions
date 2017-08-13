@@ -63,6 +63,11 @@ paths:
           required: true
           description: The id of the pet to retrieve
           type: string
+        - name: code
+          in: query
+          type: string
+          x-validations:
+            isbn13: true
       responses:
         "200":
           description: Expected response to a valid request
@@ -83,6 +88,11 @@ definitions:
         format: int64
       name:
         type: string
+      code:
+        type: string
+        # vendor extension begins with x-
+        x-validations:
+          isbn13: true
       tag:
         type: string
   Pets:

@@ -29,6 +29,12 @@ public class {{classname}} {{#parent}}extends {{{parent}}}{{/parent}} {{#seriali
   {{#gson}}
   @SerializedName("{{baseName}}")
   {{/gson}}
+
+  {{#vendorExtensions.x-validations.isbn13}}
+    // Access vendor extensions in Mustache template
+    @ISBN13
+  {{/vendorExtensions.x-validations.isbn13}}
+
   {{#isContainer}}
   {{#useBeanValidation}}@Valid{{/useBeanValidation}}
   private {{{datatypeWithEnum}}} {{name}}{{#required}} = {{{defaultValue}}}{{/required}}{{^required}} = null{{/required}};
