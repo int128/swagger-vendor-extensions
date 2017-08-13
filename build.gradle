@@ -15,5 +15,6 @@ generateSwaggerCode {
   inputFile = file('petstore.yaml')
   configFile = file('config.json')
   components = ['models', 'apis']
+  templateDir = file('template')
 }
 
